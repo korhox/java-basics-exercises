@@ -14,9 +14,9 @@ public class first {
         int month = Integer.parseInt(c.readLine());
 
         if (day == 24 && month == 12) {
-            system.out.println("Hyvää joulua!");
+            System.out.println("Hyvää joulua!");
         } else {
-            system.out.println("Hyvää päivää!");
+            System.out.println("Hyvää päivää!");
         }
     }
 }
