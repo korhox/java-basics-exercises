@@ -4,7 +4,7 @@
 //
 import java.io.Console;
 
-public class thirteenth {
+public class ex2_13 {
     public static void main(String [] args) {
 
         Console c = System.console();

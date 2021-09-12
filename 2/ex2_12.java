@@ -4,7 +4,7 @@
 //
 import java.io.Console;
 
-public class twelfth {
+public class ex2_12 {
     public static void main(String [] args) {
         Console c = System.console();
         int number;

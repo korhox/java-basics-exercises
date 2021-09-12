@@ -5,7 +5,7 @@
 
 import java.io.Console;
 
-public class tenth_to_eleventh {
+public class ex2_10to11 {
     public static void main(String [] args) {
         Console c = System.console();
         int number;

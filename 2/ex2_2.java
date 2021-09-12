@@ -5,7 +5,7 @@
 
 import java.io.Console;
 
-public class second {
+public class ex2_2 {
     public static void main(String [] args) {
         Console c = System.console();
         System.out.println("Paljonko sinulla on rahaa?");

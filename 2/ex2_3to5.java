@@ -2,7 +2,7 @@
 
 import java.io.Console;
 
-public class third_to_fiveth {
+public class ex2_3to5 {
     public static void main(String [] args) {
         // Tehtävä 3
         int age = 5;

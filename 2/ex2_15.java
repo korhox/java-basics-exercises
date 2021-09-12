@@ -4,7 +4,7 @@
 //
 import java.io.Console;
 
-public class fiveteenth {
+public class ex2_15 {
     public static void main(String [] args) {
 
         Console c = System.console();
