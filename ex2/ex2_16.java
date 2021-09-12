@@ -9,8 +9,5 @@ public class ex2_16 {
     public static void main(String [] args) {
         Console c = System.console();
         
-
-
-        
     }
 }
