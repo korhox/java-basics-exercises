@@ -31,7 +31,7 @@ public class ex2_15 {
                 lastShapeWidth = wideShapeMiddles.length(); // shape width
             }
             wideShapeMiddles = wideShapeMiddles + "▅"; // middle square
-            if (lastShapeWidth == 0) lastShapeWidth = 1; 
+            if (lastShapeWidth == 0) lastShapeWidth = 1; // prevent weird bug
             for (int i2=0; i2 < (double) size - lastShapeWidth - 2; i2++) {
                 wideShapeMiddles = wideShapeMiddles + " "; // spaces before last square
             }

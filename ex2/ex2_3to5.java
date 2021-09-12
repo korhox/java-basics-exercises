@@ -1,5 +1,7 @@
-
-
+//
+// Juuso Korhonen <juuso.m.korhonen@tuni.fi>
+// Tässä tiedostossa tehtävät 3-5
+//
 import java.io.Console;
 
 public class ex2_3to5 {
