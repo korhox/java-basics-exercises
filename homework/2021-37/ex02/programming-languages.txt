@@ -1,0 +1,7 @@
+- PHP
+- JavaScript
+    - JQuery
+- Skript
+- C#
+- Java
+- Python
