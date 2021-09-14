@@ -19,7 +19,7 @@ public class Main {
         int lowestNumber = 0;
 
         for(int i=0; i<allLines.size(); i++) {
-            Int lineNo = Integer.parseInt(allLines.get(i));
+            int lineNo = Integer.parseInt(allLines.get(i));
             System.out.println(lineNo);
             if (highestNumber < lineNo) {
                 highestNumber = lineNo;
@@ -31,13 +31,21 @@ public class Main {
         System.out.println("Highest: " + highestNumber);
         System.out.println("Lowest: " + lowestNumber);
 
-        
         for(int i=0; i<allLines.size(); i++) {
-            Int lineNo = Integer.parseInt(allLines.get(i));
+            int lineNo = Integer.parseInt(allLines.get(i));
             String result = "";
-            for(int i2=0; i<lineNo; i++) {
-                
+
+            lowestNumber = Math.abs(lowestNumber);
+            result = lineNo;
+            for(int i2=0; i<lowestNumber; i++) {
+                if(i2 < lineNo) {
+                    result = result + " ";
+                } else {
+                    result = result + "-";
+                }
             }
+
+            System.out.println(result + "|");
         }
     }
 }
