@@ -47,6 +47,9 @@
         </div>
         <script>
             function loadDirectory(directoryPath = "") {
+                if (directoryPath == "") {
+                    directoryPath = "/";
+                }
                 (async () => {
                     $(".pageBrowser").html(`<span class="text-center fs-4 py-5" style="opacity:0.5;">Loading content. Please wait...</span>`);
                     const response = await fetch('https://korho.fi/api/2021/github/introduction-to-programming.php?path='+directoryPath);
