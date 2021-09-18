@@ -85,13 +85,13 @@
                                 var filetypeIcon = `<i class="fa-solid fa-file"></i>`;
                             }
                             htmlString +=  `<div class="row g-0" onclick="loadFile('${file.path}');">
-                                                <div class="col filename p-2 d-flex align-items-center" style="max-width:35px;">${filetypeIcon}</div>
+                                                <div class="col filename p-2 d-flex align-items-center text-center" style="max-width:35px;">${filetypeIcon}</div>
                                                 <div class="col filename p-2 fw-bold">${file.name}</div>
                                                 <div class="col filename p-2 muted text-end">${file.size}</div>
                                             </a>`;
                         } else if (file.type == "dir") {
                             htmlString +=  `<div class="row g-0" onclick="loadDirectory('${file.path}');">
-                                                <div class="col filename p-2 d-flex align-items-center" style="max-width:35px;"><i class="fa-solid fa-folder"></i></div>
+                                                <div class="col filename p-2 d-flex align-items-center text-center" style="max-width:35px;"><i class="fa-solid fa-folder"></i></div>
                                                 <div class="col filename p-2 fw-bold">${file.name}</div>
                                                 <div class="col filename p-2 muted text-end">${file.size}</div>
                                             </div>`;
