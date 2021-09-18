@@ -10,9 +10,9 @@ import java.nio.file.Files;
 import java.nio.charset.Charset;
 import java.io.File;
 
-public class Ex09 {
+public class Ex37b_09 {
     public static void main(String [] args) throws IOException {
-        String textFileName = "input.txt";
+        String textFileName = "Ex37b_09_input.txt";
         List<String> allLines = Files.readAllLines(new File(textFileName).toPath(), Charset.defaultCharset());
 
         int highestNumber = 0;

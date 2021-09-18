@@ -4,7 +4,7 @@
 //
 
 import java.io.Console;
-public class Ex03_05 {
+public class Ex37b_03to05 {
     public static void main(String[] args) {
         Console c = System.console();
         System.out.println("And your name is?");
