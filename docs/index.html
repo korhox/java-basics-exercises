@@ -31,6 +31,13 @@
                 box-shadow: 0 0 25px #0000001a;
                 border:0;
             }
+            .fileEntry {
+                border-radius: 8px;
+                cursor: pointer;
+            }
+            .fileEntry:hover {
+                background-color: #0000000f;
+            }
         </style>
     </head>
     <body>
@@ -84,16 +91,16 @@
                             } else {
                                 var filetypeIcon = `<i class="fa-solid fa-file"></i>`;
                             }
-                            htmlString +=  `<div class="row g-0" onclick="loadFile('${file.path}');">
-                                                <div class="col filename p-2 d-flex align-items-center justify-content-center" style="max-width:35px;">${filetypeIcon}</div>
+                            htmlString +=  `<div class="fileEntry row g-0" onclick="loadFile('${file.path}');">
+                                                <div class="col fileicon p-2 d-flex align-items-center justify-content-center" style="max-width:35px;">${filetypeIcon}</div>
                                                 <div class="col filename p-2 fw-bold">${file.name}</div>
-                                                <div class="col filename p-2 muted text-end">${file.size}</div>
+                                                <div class="col filesize p-2 pe-3 muted text-end">${file.size}</div>
                                             </a>`;
                         } else if (file.type == "dir") {
-                            htmlString +=  `<div class="row g-0" onclick="loadDirectory('${file.path}');">
-                                                <div class="col filename p-2 d-flex align-items-center justify-content-center" style="max-width:35px;"><i class="fa-solid fa-folder"></i></div>
+                            htmlString +=  `<div class="fileEntry row g-0" onclick="loadDirectory('${file.path}');">
+                                                <div class="col fileicon p-2 d-flex align-items-center justify-content-center" style="max-width:35px;"><i class="fa-solid fa-folder"></i></div>
                                                 <div class="col filename p-2 fw-bold">${file.name}</div>
-                                                <div class="col filename p-2 muted text-end">${file.size}</div>
+                                                <div class="col filesize p-2 pe-3 muted text-end">${file.size}</div>
                                             </div>`;
                         }
                     }
