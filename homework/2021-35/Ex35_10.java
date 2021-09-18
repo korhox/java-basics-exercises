@@ -4,7 +4,7 @@
 //
 import java.io.Console;  
 
-public class WhileUntil {
+public class Ex35_10 {
     public static void main(String [] args) {
         int number = 0;
         int result = 0;

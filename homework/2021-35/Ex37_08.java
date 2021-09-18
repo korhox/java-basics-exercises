@@ -5,7 +5,7 @@
 
 import java.io.Console;  
 
-public class AskAge {
+public class Ex37_08 {
     public static void main(String [] args) {
         Console c = System.console(); 
 

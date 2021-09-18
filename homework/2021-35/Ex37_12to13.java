@@ -3,7 +3,7 @@
 // Tässä tiedostossa tehtävät 12 & 13
 //
 
-public class PrintTens {
+public class Ex37_12to13 {
     public static void main(String [] args) {
         // Tehtävä 12
         int i = 1;

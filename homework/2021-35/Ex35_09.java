@@ -3,7 +3,7 @@
 // Tässä tiedostossa tehtävä 9
 //
 
-public class While {
+public class Ex35_09 {
     public static void main(String [] args) {
         int i = 1;
         while (i <= 3) {

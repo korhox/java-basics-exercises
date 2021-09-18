@@ -5,7 +5,7 @@
 
 import java.io.Console;  
 
-public class AskInt {
+public class Ex37_05to07 {
     public static void main(String [] args) {
         Console c = System.console(); 
 

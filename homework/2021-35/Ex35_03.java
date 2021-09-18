@@ -1,14 +1,10 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// Tässä tiedostossa tehtävä6 1 & 2 
+// Tässä tiedostossa tehtävä 3
 //
 
-class A {
+public class Ex35_03 {
     public static void main(String [] args) {
-        System.out.println("Hello!");
+        System.out.println("Hello World!");
     }
-}
-
-class B {
-
 }
