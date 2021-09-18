@@ -4,9 +4,6 @@
 //
 
 import java.io.Console;
-import java.nio.ShortBuffer;
-
-import javax.print.attribute.standard.PrinterName;
 
 public class Ex37b_09 {
     public static void main(String[] args) {
