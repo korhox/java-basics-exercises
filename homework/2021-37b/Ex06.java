@@ -3,7 +3,7 @@
 // Tässä tiedostossa tehtävä 2
 //
 
-public class Main {
+public class Ex06 {
     public static void main(String[] args) {
         System.out.println(1+1); // = 2 (integerit lasketaan yhteen)
         System.out.println("merkkijono1" + "merkkijono2"); // = merkkijono1merkkijono2 (stringit liitetään)
