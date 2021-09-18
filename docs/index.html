@@ -28,7 +28,7 @@
             <div class="container py-4">
                 <div class="row">
                     <div class="col-4 d-flex align-items-center">
-                        <a href="/"><img src="https://next.korho.fi/wp-content/uploads/2021/06/korho.svg" width="150px"></a>
+                        <a href="/"><img src="src/img/korho.svg" width="150px"></a>
                     </div>
                     <div class="col align-items-center">
                         <h1 class="text-white text-end m-0 fs-3"><b>4A00EK44-3010</b> - Introduction to Programming</h1>
@@ -105,10 +105,15 @@
 
             const paramsString = 'q=URLUtils.searchParams&topic=api';
             let searchParams = new URLSearchParams(paramsString);
-            loadDirectory(getParameter('path'));
+            if(getParameter('path') == "null") {
+                var loadPath = "";
+            } else {
+                var loadPath = getParameter('path');
+            }
+            loadDirectory(loadPath);
 
             $(window).on("popstate", function (event, state) {
-                loadDirectory(getParameter('path'));
+                loadDirectory(loadPath);
             });
         </script>
     <body>
