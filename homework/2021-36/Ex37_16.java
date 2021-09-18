@@ -1,10 +1,10 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// Tässä tiedostossa tehtävä 17
+// Tässä tiedostossa tehtävä 16
 //
 import java.io.Console;
 
-public class ex2_17 {
+public class Ex37_16 {
     public static void main(String [] args) {
 
         Console c = System.console();
@@ -14,7 +14,7 @@ public class ex2_17 {
         System.out.println("How big shape you would like to have?");
         int size = Integer.parseInt(c.readLine());
 
-        for (int i=size; i > 0; i--) {
+        for (int i=0; i < size; i++) {
             wideShapeMiddles = ""; // reset
             for (int i2=0; i2 < i; i2++) {
                 wideShapeMiddles = wideShapeMiddles + " "; // spaces before middle square

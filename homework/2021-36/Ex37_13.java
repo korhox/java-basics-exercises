@@ -4,7 +4,7 @@
 //
 import java.io.Console;
 
-public class ex2_13 {
+public class Ex37_13 {
     public static void main(String [] args) {
 
         Console c = System.console();

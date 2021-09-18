@@ -5,7 +5,7 @@
 import java.io.Console;
 import java.util.Random;
 
-public class ex2_20 {
+public class Ex37_20 {
     public static void main(String [] args) {
         Console c = System.console();
         int round = 0;

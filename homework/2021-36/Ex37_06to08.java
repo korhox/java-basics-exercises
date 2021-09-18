@@ -3,7 +3,7 @@
 // Tässä tiedostossa tehtävät 6 - 8
 //
 
-public class ex2_6to8 {
+public class Ex37_06to08 {
     public static void main(String [] args) {
         int i;
         // Tehtävä 6.a
