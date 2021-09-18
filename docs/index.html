@@ -57,7 +57,7 @@
         <div class="container py-5">
             <div class="breadcrumbs card d-block p-2 mb-3" style="border-radius: 8px;opacity: 0;"></div>
             <div class="pageBrowser card p-2 " style="border-radius: 8px;">
-                <span class="text-center fs-4 py-5" style="opacity:0.5;">Loading content. Please wait...</span>
+                <span class="text-center fs-4 py-5" style="opacity:0.5;"></span>
             </div>
             <div class="breadcrumbs card d-block p-2 mt-3" style="border-radius: 8px;opacity: 0;"></div>
             <p class="muted m-0 mt-4 text-center">Copyright &copy; korho.fi 2021</p>
@@ -68,7 +68,7 @@
                     directoryPath = "/";
                 }
                 (async () => {
-                    $(".pageBrowser").html(`<span class="text-center fs-4 py-5" style="opacity:0.5;">Loading content. Please wait...</span>`);
+                    $(".pageBrowser").html(`<span class="text-center fs-4 py-5" style="opacity:0.5;"><i class="fa-solid fa-brackets-curly fa-flip"></i></span>`);
                     const response = await fetch('https://korho.fi/api/2021/github/introduction-to-programming.php?path='+directoryPath);
                     const data = await response.json();
                     let htmlString = "";
