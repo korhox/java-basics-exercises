@@ -48,11 +48,11 @@
             </div>
         </header>
         <div class="container py-5">
-            <div class="breadcrumbs card d-block p-2 mb-3" style="border-radius: 8px;">
-            </div>
+            <div class="breadcrumbs card d-block p-2 mb-3" style="border-radius: 8px;opacity: 0;"></div>
             <div class="pageBrowser card p-2 " style="border-radius: 8px;">
                 <span class="text-center fs-4 py-5" style="opacity:0.5;">Loading content. Please wait...</span>
             </div>
+            <div class="breadcrumbs card d-block p-2 mb-3" style="border-radius: 8px;opacity: 0;"></div>
             <p class="muted m-0 mt-4 text-center">Copyright &copy; korho.fi 2021</p>
         </div>
         <script>
@@ -85,13 +85,13 @@
                                 var filetypeIcon = `<i class="fa-solid fa-file"></i>`;
                             }
                             htmlString +=  `<div class="row g-0" onclick="loadFile('${file.path}');">
-                                                <div class="col filename p-2" style="max-width:50px;">${filetypeIcon}</div>
+                                                <div class="col filename p-2 d-flex align-items-center" style="max-width:35px;">${filetypeIcon}</div>
                                                 <div class="col filename p-2 fw-bold">${file.name}</div>
                                                 <div class="col filename p-2 muted text-end">${file.size}</div>
                                             </a>`;
                         } else if (file.type == "dir") {
                             htmlString +=  `<div class="row g-0" onclick="loadDirectory('${file.path}');">
-                                                <div class="col filename p-2" style="max-width:50px;"><i class="fa-solid fa-folder"></i></div>
+                                                <div class="col filename p-2 d-flex align-items-center" style="max-width:35px;"><i class="fa-solid fa-folder"></i></div>
                                                 <div class="col filename p-2 fw-bold">${file.name}</div>
                                                 <div class="col filename p-2 muted text-end">${file.size}</div>
                                             </div>`;
@@ -107,6 +107,7 @@
                         }
                     }
                     $(".breadcrumbs").html(directoryPath);
+                    $(".breadcrumbs").css("opacity", "1");
                     $(".pageBrowser").html(htmlString);
                 })();
             }
