@@ -3,7 +3,7 @@
 // Tässä tiedostossa tehtävä 2
 //
 
-public class Main {
+public class Ex02 {
     public static void main(String[] args) {
 
         String text = "This is an test string.";
