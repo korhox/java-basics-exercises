@@ -103,13 +103,10 @@
                 return parameterList.get(key)
             }
 
-            const paramsString = 'q=URLUtils.searchParams&topic=api';
-            let searchParams = new URLSearchParams(paramsString);
-            var loadPath = searchParams("path");
-            loadDirectory(loadPath);
+            loadDirectory(getParameter('path'));
 
             $(window).on("popstate", function (event, state) {
-                loadDirectory(loadPath);
+                loadDirectory(getParameter('path'));
             });
         </script>
     <body>
