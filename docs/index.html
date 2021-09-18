@@ -95,7 +95,7 @@
                                                 <div class="col fileicon p-2 d-flex align-items-center justify-content-center" style="max-width:35px;">${filetypeIcon}</div>
                                                 <div class="col filename p-2 fw-bold">${file.name}</div>
                                                 <div class="col filesize p-2 pe-3 muted text-end">${file.size}</div>
-                                            </a>`;
+                                            </div>`;
                         } else if (file.type == "dir") {
                             htmlString +=  `<div class="fileEntry row g-0" onclick="loadDirectory('${file.path}');">
                                                 <div class="col fileicon p-2 d-flex align-items-center justify-content-center" style="max-width:35px;"><i class="fa-solid fa-folder"></i></div>
