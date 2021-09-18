@@ -105,6 +105,7 @@
 
             const paramsString = 'q=URLUtils.searchParams&topic=api';
             let searchParams = new URLSearchParams(paramsString);
+            var loadPath = searchParams("path");
             loadDirectory(loadPath);
 
             $(window).on("popstate", function (event, state) {
