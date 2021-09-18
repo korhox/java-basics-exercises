@@ -5,7 +5,7 @@
 
 import java.io.Console;
 
-public class Ex37_10to11 {
+public class Ex36_10to11 {
     public static void main(String [] args) {
         Console c = System.console();
         int number;

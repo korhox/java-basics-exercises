@@ -4,7 +4,7 @@
 //
 import java.io.Console;
 
-public class Ex37_12 {
+public class Ex36_12 {
     public static void main(String [] args) {
         Console c = System.console();
         int number;

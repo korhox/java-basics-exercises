@@ -1,11 +1,11 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// Tässä tiedostossa tehtävä 21
+// Tässä tiedostossa tehtävä 20
 //
 import java.io.Console;
 import java.util.Random;
 
-public class Ex37_21 {
+public class Ex36_20 {
     public static void main(String [] args) {
         Console c = System.console();
         int round = 0;
@@ -27,14 +27,12 @@ public class Ex37_21 {
                 System.out.println("[1] " + name(0));
                 System.out.println("[2] " + name(1));
                 System.out.println("[3] " + name(2));
-                System.out.println("[4] " + name(3));
-                System.out.println("[5] " + name(4));
                 player1 = Integer.parseInt(c.readLine()) - 1;
-            } while (player1 < 0 || player1 > 4);
+            } while (player1 < 0 || player1 > 2);
 
             Random player2rnd = new Random();
 
-            int player2 = player2rnd.nextInt(5);
+            int player2 = player2rnd.nextInt(3);
 
             clearScreen();
             System.out.println(WHITE_BOLD+"ROCK PAPER SCISSORS ROUND #"+round+RESET);
@@ -43,7 +41,9 @@ public class Ex37_21 {
             System.out.println(RED_BOLD +"You "+RESET+"gave " + name(player1) + " and "+GREEN_BOLD+"Computer "+RESET+"gave " + name(player2) + ".");
             System.out.println();
 
-            boolean player1loses = ((player1 - player2) % 5 < 3);
+            boolean player1loses = ((player1 == 0 && player2 == 1)||
+                                    (player1 == 1 && player2 == 2)||
+                                    (player1 == 2 && player2 == 0));
 
             if (player1 == player2) {
                 System.out.println(WHITE_BOLD+"It's a tie! No points were given!");
@@ -87,12 +87,8 @@ public class Ex37_21 {
             case 0:
                 return WHITE_BOLD+"Rock"+RESET;
             case 1:
-                return WHITE_BOLD+"Spock"+RESET;
-            case 2:
                 return WHITE_BOLD+"Paper"+RESET;
-            case 3:
-                return WHITE_BOLD+"Lizard"+RESET;
-            case 4:
+            case 2:
                 return WHITE_BOLD+"Scissors"+RESET;
             default:
                 return "n/a";

@@ -5,7 +5,7 @@
 
 import java.io.Console;
 
-public class Ex37_01 {
+public class Ex36_01 {
     public static void main(String [] args) {
         Console c = System.console();
         System.out.println("Anna päivä");

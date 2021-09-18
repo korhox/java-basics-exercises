@@ -1,10 +1,10 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// Tässä tiedostossa tehtävä 18
+// Tässä tiedostossa tehtävä 19
 //
 import java.io.Console;
 
-public class Ex37_18 {
+public class Ex36_19 {
     public static void main(String [] args) {
         Console c = System.console();
         int player1 = 0;
@@ -14,40 +14,38 @@ public class Ex37_18 {
             clearScreen();
             System.out.println(WHITE_BOLD+"ROCK PAPER SCISSORS"+RESET);
             System.out.println();
-            System.out.println("Please enter "+RED_BOLD+"Player 1 "+RESET+"response:");
+            System.out.println("Please enter "+RED_BOLD+"your"+RESET+" response:");
             System.out.println("[1] " + name(0));
             System.out.println("[2] " + name(1));
             System.out.println("[3] " + name(2));
             player1 = Integer.parseInt(c.readLine()) - 1;
         } while (player1 < 0 || player1 > 2);
 
-        do {
-            clearScreen();
-            System.out.println(WHITE_BOLD+"ROCK PAPER SCISSORS"+RESET);
-            System.out.println();
-            System.out.println("Please enter "+GREEN_BOLD+"Player 1 "+RESET+"response:");
-            System.out.println("[1] " + name(0));
-            System.out.println("[2] " + name(1));
-            System.out.println("[3] " + name(2));
-            player2 = Integer.parseInt(c.readLine()) - 1;
-        } while (player2 < 0 || player2 > 2);
+        double player2random = Math.random();
+        if (player2random >= 0.33) {
+            player2 = 0;
+        } else if (player2random >= 0.66) {
+            player2 = 1;
+        } else {
+            player2 = 2;
+        }
 
         clearScreen();
         System.out.println(WHITE_BOLD+"ROCK PAPER SCISSORS"+RESET);
         System.out.println();
-        System.out.println(RED_BOLD +"Player 1 "+RESET+"gave " + name(player1) + " and "+GREEN_BOLD+"Player 2 "+RESET+"gave " + name(player2) + ".");
+        System.out.println(RED_BOLD +"You "+RESET+"gave " + name(player1) + " and "+GREEN_BOLD+"Computer "+RESET+"gave " + name(player2) + ".");
         System.out.println();
 
-        boolean player1loses =  ((player1 == 0 && player2 == 1)||
+        boolean player1loses = ((player1 == 0 && player2 == 1)||
                                 (player1 == 1 && player2 == 2)||
                                 (player1 == 2 && player2 == 0));
 
         if (player1 == player2) {
             System.out.println(WHITE_BOLD+"It's a tie!");
         } else if (player1loses) {
-            System.out.println(GREEN_BOLD+"Player 2 wins!"+RESET);
+            System.out.println(GREEN_BOLD+"Computer wins!"+RESET);
         } else {
-            System.out.println(RED_BOLD+"Player 1 wins!"+RESET);
+            System.out.println(RED_BOLD+"You win!"+RESET);
         }
 
     }
@@ -68,9 +66,9 @@ public class Ex37_18 {
 
     // not related to exercise
 
-    public static void clearScreen() {  
-        System.out.print("\033[H\033[2J");  
-        System.out.flush();  
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     public static final String RESET = "\033[0m";  // Text Reset
@@ -94,6 +92,4 @@ public class Ex37_18 {
     public static final String PURPLE_BOLD = "\033[1;35m"; // PURPLE
     public static final String CYAN_BOLD = "\033[1;36m";   // CYAN
     public static final String WHITE_BOLD = "\033[1;37m";  // WHITE
-
-
 }

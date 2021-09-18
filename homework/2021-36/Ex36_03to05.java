@@ -4,7 +4,7 @@
 //
 import java.io.Console;
 
-public class Ex37_03to05 {
+public class Ex36_03to05 {
     public static void main(String [] args) {
         // Tehtävä 3
         int age = 5;
