@@ -18,34 +18,57 @@ public class Ex37b_09 {
         int highestNumber = 0;
         int lowestNumber = 0;
 
+        // Check highest and lowest numbers from the file
         for(int i=0; i<allLines.size(); i++) {
             int lineNo = Integer.parseInt(allLines.get(i));
-            System.out.println(lineNo);
-            if (highestNumber < lineNo) {
+            if(highestNumber < lineNo) {
                 highestNumber = lineNo;
             }
-            if (lowestNumber > lineNo) {
+            if(lowestNumber > lineNo) {
                 lowestNumber = lineNo;
             }
         }
-        System.out.println("Highest: " + highestNumber);
-        System.out.println("Lowest: " + lowestNumber);
 
+        // Loop through the lines
         for(int i=0; i<allLines.size(); i++) {
             int lineNo = Integer.parseInt(allLines.get(i));
             String result = "";
-
-            lowestNumber = Math.abs(lowestNumber);
-            result = lineNo;
-            for(int i2=0; i<lowestNumber; i++) {
-                if(i2 < lineNo) {
-                    result = result + " ";
-                } else {
-                    result = result + "-";
+            String result2 = "";
+            // Loop through lowest number of the line number
+            for(int i2=0; i2<Math.abs(lowestNumber);i2++) {
+                // If line number is negative, print out the pole
+                if(lineNo < 0) {
+                    // if line number is lower than loop point, add space
+                    if(i2>Math.abs(lineNo)){
+                        result = result + " ";
+                    }else{ // if not, add dash
+                        result = result + "-";
+                    }
+                } else { // If not ,print out spaces
+                    if(i2<Math.abs(lowestNumber)){
+                        result = result + " ";
+                    }
                 }
             }
-
-            System.out.println(result + "|");
+            // Flip the minuses (using palindrome exercise)
+            String resultMinus = "";
+            for (int i2=result.length(); i2>0; i2--) {
+                resultMinus = resultMinus + result.charAt(i2-1);
+            }
+            // Loop through highest number of the line number
+            for(int i2=0; i2<Math.abs(highestNumber);i2++) {
+                // if line number is positive
+                if(lineNo > 0) {
+                    // if loop is lower than number, add plus sign
+                    if(i2<Math.abs(lineNo)){
+                        result2 = result2 + "+";
+                    }
+                }
+            }
+            // Print out the results for the line
+            System.out.println(resultMinus + "|" + result2);
         }
     }
 }
+
+
