@@ -78,51 +78,55 @@
                     $(".pageBrowser").html(`<span class="text-center fs-4 py-5" style="opacity:0.5;"><i class="fa-solid fa-brackets-curly fa-flip"></i></span>`);
                     const response = await fetch('https://korho.fi/api/2021/github/introduction-to-programming.php?path='+directoryPath);
                     const data = await response.json();
-                    let htmlString = "";
-                    data.sort((a, b) => a.type.localeCompare(b.type));
-                    for (let file of data) {
-                        if (file.size == 0) {
-                            file.size = "";
-                        } else if (file.size > 0) {
-                            file.size = file.size + " B";
-                        } else if (file.size > 1000) {
-                            file.size = (file.size/1000).toFixed(2) + " KB";
-                        } else if (file.size > 1000^2) {
-                            file.size = (file.size/1000).toFixed(2) + " MB";
-                        } else if (file.size > 1000^3) {
-                            file.size = (file.size/1000).toFixed(2) + " GB";
-                        }
-                        if (file.type == "file") {
-                            if (file.path.endsWith(".java")) {
-                                var filetypeIcon = `<i class="fa-solid fa-mug"></i>`;
-                            } else {
-                                var filetypeIcon = `<i class="fa-solid fa-file"></i>`;
+                    if (response.status >= 400 && response.status < 600) {
+                        
+                    } else {
+                        let htmlString = "";
+                        data.sort((a, b) => a.type.localeCompare(b.type));
+                        for (let file of data) {
+                            if (file.size == 0) {
+                                file.size = "";
+                            } else if (file.size > 0) {
+                                file.size = file.size + " B";
+                            } else if (file.size > 1000) {
+                                file.size = (file.size/1000).toFixed(2) + " KB";
+                            } else if (file.size > 1000^2) {
+                                file.size = (file.size/1000).toFixed(2) + " MB";
+                            } else if (file.size > 1000^3) {
+                                file.size = (file.size/1000).toFixed(2) + " GB";
                             }
-                            htmlString +=  `<div class="fileEntry rounded row g-0" onclick="loadFile('${file.path}');">
-                                                <div class="col fileicon p-2 d-flex align-items-center justify-content-center" style="max-width:35px;">${filetypeIcon}</div>
-                                                <div class="col filename p-2 fw-bold d-flex align-items-center justify-content-start">${file.name}</div>
-                                                <div class="col filesize p-2 pe-3 muted d-flex align-items-center justify-content-end">${file.size}</div>
-                                            </div>`;
-                        } else if (file.type == "dir") {
-                            htmlString +=  `<div class="fileEntry rounded row g-0" onclick="loadDirectory('${file.path}');">
-                                                <div class="col fileicon p-2 d-flex align-items-center justify-content-center" style="max-width:35px;"><i class="fa-solid fa-folder"></i></div>
-                                                <div class="col filename p-2 fw-bold d-flex align-items-center justify-content-start">${file.name}</div>
-                                                <div class="col filesize p-2 pe-3 muted d-flex align-items-center justify-content-end">${file.size}</div>
-                                            </div>`;
+                            if (file.type == "file") {
+                                if (file.path.endsWith(".java")) {
+                                    var filetypeIcon = `<i class="fa-solid fa-mug"></i>`;
+                                } else {
+                                    var filetypeIcon = `<i class="fa-solid fa-file"></i>`;
+                                }
+                                htmlString +=  `<div class="fileEntry rounded row g-0" onclick="loadFile('${file.path}');">
+                                                    <div class="col fileicon p-2 d-flex align-items-center justify-content-center" style="max-width:35px;">${filetypeIcon}</div>
+                                                    <div class="col filename p-2 fw-bold d-flex align-items-center justify-content-start">${file.name}</div>
+                                                    <div class="col filesize p-2 pe-3 muted d-flex align-items-center justify-content-end">${file.size}</div>
+                                                </div>`;
+                            } else if (file.type == "dir") {
+                                htmlString +=  `<div class="fileEntry rounded row g-0" onclick="loadDirectory('${file.path}');">
+                                                    <div class="col fileicon p-2 d-flex align-items-center justify-content-center" style="max-width:35px;"><i class="fa-solid fa-folder"></i></div>
+                                                    <div class="col filename p-2 fw-bold d-flex align-items-center justify-content-start">${file.name}</div>
+                                                    <div class="col filesize p-2 pe-3 muted d-flex align-items-center justify-content-end">${file.size}</div>
+                                                </div>`;
+                            }
                         }
-                    }
-                    directoryPath = (directoryPath[0] == '/') ? directoryPath.substr(1) : directoryPath;
-                    history.pushState({"path":directoryPath}, "", "?path="+directoryPath)
-                    const directoryPathArr = directoryPath.split("/");
-                            directoryPath = ` / <span class="text-primary" onclick="loadDirectory('/');">repository</span>`;
-                    for (let i = 0; i < directoryPathArr.length; i++) {
-                        if (directoryPathArr[i] !== "/"){
-                            directoryPath = directoryPath + ` / <span class="text-primary" class="cursor:pointer;" onclick="loadDirectory('/${directoryPathArr[i]}');">${directoryPathArr[i]}</span>`;
+                        directoryPath = (directoryPath[0] == '/') ? directoryPath.substr(1) : directoryPath;
+                        history.pushState({"path":directoryPath}, "", "?path="+directoryPath)
+                        const directoryPathArr = directoryPath.split("/");
+                                directoryPath = ` / <span class="text-primary" onclick="loadDirectory('/');">repository</span>`;
+                        for (let i = 0; i < directoryPathArr.length; i++) {
+                            if (directoryPathArr[i] !== "/"){
+                                directoryPath = directoryPath + ` / <span class="text-primary" class="cursor:pointer;" onclick="loadFileOrDirectory('/${directoryPathArr[i]}');">${directoryPathArr[i]}</span>`;
+                            }
                         }
+                        $(".breadcrumbs").html(directoryPath);
+                        $(".breadcrumbs").css("opacity", "1");
+                        $(".pageBrowser").html(htmlString);
                     }
-                    $(".breadcrumbs").html(directoryPath);
-                    $(".breadcrumbs").css("opacity", "1");
-                    $(".pageBrowser").html(htmlString);
                 })();
             }
             function b64DecodeUnicode(str) {

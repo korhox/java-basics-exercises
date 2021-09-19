@@ -1,6 +1,6 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// Tässä tiedostossa tehtävä 8
+// Tässä tiedostossa tehtävä 9
 //
 
 import java.io.Console;

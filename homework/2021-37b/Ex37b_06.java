@@ -1,6 +1,6 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// Tässä tiedostossa tehtävä 2
+// Tässä tiedostossa tehtävä 6
 //
 
 public class Ex37b_06 {
