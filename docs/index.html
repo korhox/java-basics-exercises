@@ -86,13 +86,17 @@
                         for (let file of data) {
                             if (file.size == 0) {
                                 file.size = "";
-                            } else if (file.size > 0) {
+                            } 
+                            if (file.size > 0) {
                                 file.size = file.size + " B";
-                            } else if (file.size > 1000) {
+                            }
+                            if (file.size > 1000) {
                                 file.size = (file.size/1000).toFixed(2) + " KB";
-                            } else if (file.size > 1000^2) {
+                            }
+                            if (file.size > 1000^2) {
                                 file.size = (file.size/1000).toFixed(2) + " MB";
-                            } else if (file.size > 1000^3) {
+                            } 
+                            if (file.size > 1000^3) {
                                 file.size = (file.size/1000).toFixed(2) + " GB";
                             }
                             if (file.type == "file") {
@@ -146,13 +150,17 @@
                         let file = data;
                         if (file.size == 0) {
                             file.size = "";
-                        } else if (file.size > 0) {
+                        } 
+                        if (file.size > 0) {
                             file.size = file.size + " B";
-                        } else if (file.size > 1000) {
+                        }
+                        if (file.size > 1000) {
                             file.size = (file.size/1000).toFixed(2) + " KB";
-                        } else if (file.size > 1000^2) {
+                        }
+                        if (file.size > 1000^2) {
                             file.size = (file.size/1000).toFixed(2) + " MB";
-                        } else if (file.size > 1000^3) {
+                        } 
+                        if (file.size > 1000^3) {
                             file.size = (file.size/1000).toFixed(2) + " GB";
                         }
                         if (file.type == "file") {
