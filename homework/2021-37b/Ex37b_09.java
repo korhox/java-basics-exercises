@@ -17,7 +17,7 @@ public class Ex37b_09 {
         // Loop through the name
         for (int i=0; i<name.length(); i++) {
             // Add characters to new string one by one
-            if(name.charAt(i) != ' ' || name.charAt(i) != '.' || name.charAt(i) != ',') {
+            if(name.charAt(i) != ' ' && name.charAt(i) != '.' && name.charAt(i) != ',') {
                 nameFiltered = nameFiltered + name.charAt(i);
             }
         }
@@ -29,9 +29,9 @@ public class Ex37b_09 {
         }
 
         if (nameFiltered.equalsIgnoreCase(nameBackwards)) {
-            System.out.println("It is palindrome");
+            System.out.println("It is palindrome: " + nameFiltered);
         } else {
-            System.out.println("It is not palindrome");
+            System.out.println("It is not palindrome: " + nameFiltered);
         }
     }
 }
