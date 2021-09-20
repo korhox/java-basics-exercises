@@ -1,6 +1,6 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// This file has exercises 1 and 2
+// This file has exercise 8
 //
 import java.io.Console;
 
@@ -11,12 +11,12 @@ class Ex38_08 {
         int [] table = new int[10];  
         int i = 0;
 
-        do {
-            table[i++] = Integer.parseInt(c.readLine());
-        } while (table.length == 10);
+        for (i=0; i>table.length; i++) {
+            table[i] = Integer.parseInt(c.readLine());
+        };
         
-        for (i=table.length; i>0; i--) {
-                System.out.println(table[i-1]);
+        for (i=0; i>table.length; i++) {
+            System.out.println(table[i]);
         }
     }
 }
