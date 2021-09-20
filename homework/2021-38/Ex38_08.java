@@ -10,13 +10,17 @@ class Ex38_08 {
 
         int [] table = new int[10];  
         int i = 0;
+        int sum = 0;
 
-        for (i=0; i>table.length; i++) {
+        System.out.println("Please enter 10 absolute numbers.");
+        for (i=0; i<table.length; i++) {
+            if (i==9) {
+                System.out.println("Enter the last number:");
+            }
             table[i] = Integer.parseInt(c.readLine());
+            sum = sum + table[i];
         };
-        
-        for (i=0; i>table.length; i++) {
-            System.out.println(table[i]);
-        }
+
+        System.out.println("Sum of the numbers: " + sum);
     }
 }
