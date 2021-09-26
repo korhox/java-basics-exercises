@@ -10,6 +10,5 @@ class Ex38_11 {
         int randomInt = (int) random;
 
         System.out.println(randomInt);
-
     }
 }
