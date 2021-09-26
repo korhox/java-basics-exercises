@@ -8,16 +8,13 @@ import java.io.Console;
 class Ex38_14 {
     public static void main(String [] args) {
 
-        String [] table = new String[100];
+        int [] table = new int[100];
 
         for (int i=0; i<table.length; i++) {
 
-            double random = Math.random() * 100;
-            int randomInt = (int) random;
-    
-            System.out.println(randomInt);
+            double random = Math.random() * 100 + 1;
 
-            table[i] = random;
+            table[i] = (int) random;
             System.out.println(table[i]);
 
         }
