@@ -9,11 +9,7 @@ class Ex38_12 {
         double random = Math.random() * 3;
         int randomInt = (int) random;
 
-        String [] table = new String[3];  
-
-        table[0] = "rock";
-        table[1] = "paper";
-        table[2] = "scissors";
+        String [] table = {"rock", "paper", "scissors"};
 
         System.out.println(table[randomInt]);
 
