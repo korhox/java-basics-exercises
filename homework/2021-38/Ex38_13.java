@@ -9,15 +9,15 @@ class Ex38_13 {
             int arg1 = Integer.parseInt(args[0]);
             int arg2 = Integer.parseInt(args[2]);
 
-            if (args[1] == "+") {
+            if (args[1].equals("+")) {
                 System.out.println(arg1 + arg2);
-            } else if (args[1] == "-") {
+            } else if (args[1].equals("-")) {
                 System.out.println(arg1 - arg2);
-            } else if (args[1] == "*" || args[1] == "x") {
+            } else if (args[1].equals("*") || args[1].equals("x")) {
                 System.out.println(arg1 * arg2);
-            } else if (args[1] == ":" || args[1] == "/") {
+            } else if (args[1].equals(":") || args[1].equals("/")) {
                 System.out.println(arg1 / arg2);
-            } else if (args[1] == "%") {
+            } else if (args[1].equals("%")) {
                 System.out.println(arg1 % arg2);
             } else {
                 System.out.println("The operator '"+args[1]+"' is not supported.");
