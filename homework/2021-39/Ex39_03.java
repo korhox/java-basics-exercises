@@ -5,7 +5,8 @@
 
 class Ex39_3 {
     public static void main(String [] args) {
-        tulostaJokinNimi("Pena");
+        tulostaJokinNimi("Jeppe");
+        tulostaJokinNimi("Jeppe");
     }
     public static void tulostaJokinNimi(String nimi) {
         System.out.println(nimi);
