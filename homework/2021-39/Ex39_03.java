@@ -1,6 +1,6 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// This file has exercise 2
+// This file has exercise 3
 //
 
 class Ex39_3 {
