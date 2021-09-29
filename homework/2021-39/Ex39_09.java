@@ -3,9 +3,10 @@
 // This file has exercise 9
 //
 
-import java.io.Console;
-
 class Ex39_9 {    
+        static int a;
+        static int b;
+        static int summa;
         public static void main(String [] args) {
             asetaA();
             asetaB();
@@ -14,15 +15,15 @@ class Ex39_9 {
         }
     
         public static void asetaA() {
-            int a = 5;
+            a = 5;
         }
     
         public static void asetaB() {
-            int b = 5;
+            b = 5;
         }
     
         public static void laskeYhteen() {
-            int summa = a + b;
+            summa = a + b;
         }
     
         public static void tulosta() {
