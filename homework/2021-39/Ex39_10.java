@@ -11,11 +11,7 @@ class Ex39_10 {
     public static String replaceChars(String subject, char search, String replace) {
         String result = "";
         for (char v : subject.toCharArray()) {
-            if (v == search) {
-                result += replace;
-            } else {
-                result += v;
-            }
+            result += (v == search) ? replace : v;
         }
         return result;
     }
