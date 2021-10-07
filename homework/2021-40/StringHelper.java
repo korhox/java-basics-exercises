@@ -27,11 +27,11 @@ class StringHelper {
         return result;
     }
 
-    public static String [] split(String subject) {
+/*     public static String [] split(String subject) {
         for (int i = 0; i < subject.length(); i++) {
             if(subject.charAt(i) == '.') {
 
             }
         }
-    }
+    } */
 }
