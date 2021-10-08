@@ -3,7 +3,7 @@
 // This file has exercise 5
 //
 
-class StringHelper {
+class Ex40_05 {
     public static void main(String [] args) {
         if (equals("epic", "epic")) {
             System.out.println("true");
@@ -26,12 +26,4 @@ class StringHelper {
         }
         return result;
     }
-
-/*     public static String [] split(String subject) {
-        for (int i = 0; i < subject.length(); i++) {
-            if(subject.charAt(i) == '.') {
-
-            }
-        }
-    } */
 }
