@@ -25,7 +25,9 @@ class Ex40_10 {
             if (playNewGame.equals("")) {
                 playGame();
             }
-        } while (playNewGame.equals(""));
+        } while (playNewGame.equals("") && balance > 0);
+        System.out.println();
+        System.out.println(RED_BOLD + "You lost the game :(");
     }
 
     public static void playGame() {
