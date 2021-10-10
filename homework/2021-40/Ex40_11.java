@@ -1,13 +1,13 @@
 import java.io.Console;
-import java.util.concurrent.TimeUnit;
 
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// This file has exercise 10
+// This file has exercise 11
 //
 
-class Ex40_10 {
+class Ex40_11 {
     public static int balance = 25;
+    public static int bet = 1;
 
     // Generate first table
     public static int[][] resultTable = {
@@ -21,12 +21,16 @@ class Ex40_10 {
         String playNewGame = "";
         do {
             printUI();
-            System.out.println(CYAN + "Play game? " + WHITE + "(hit enter)");
+            System.out.println(CYAN + "Play game? " + WHITE + "(hit enter)" + RESET);
+            System.out.println(CYAN + "Enter number to change bet amount " + WHITE + "(+hit enter)" + RESET);
+            System.out.println(CYAN + "Enter anything else to stop " + WHITE + "(+hit enter)" + RESET);
             playNewGame = c.readLine();
             if (playNewGame.equals("")) {
                 playGame();
+            } else if (playNewGame.matches("-?\\d+")) {
+                bet = Integer.parseInt(playNewGame);
             }
-        } while (playNewGame.equals(""));
+        } while (playNewGame.equals("") || playNewGame.matches("-?\\d+"));
     }
 
     public static void playGame() {
@@ -58,7 +62,7 @@ class Ex40_10 {
         if (resultTable[1][0] == resultTable[1][1] && resultTable[1][1] == resultTable[1][2]) {
             printUI();
             System.out.println(PURPLE_BOLD + "YOU WON THE GAME! 🎉🎉🎉");
-            balance += 3;
+            balance += bet * 3;
 
             try {
                 Thread.sleep(5000);
@@ -81,7 +85,7 @@ class Ex40_10 {
         System.out.println(RED_BOLD + "   ■                       ■" + RESET);
         System.out.println(RED_BOLD + "    ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■" + RESET);
         System.out.println();
-        System.out.println(GREEN_BOLD + "     Balance: " + BLUE_BOLD + balance + "  " + GREEN_BOLD + "Bet: " + BLUE_BOLD + 1 + RESET);
+        System.out.println(GREEN_BOLD + "     Balance: " + BLUE_BOLD + balance + "  " + GREEN_BOLD + "Bet: " + BLUE_BOLD + bet + RESET);
         System.out.println();
         System.out.println();
         System.out.println();
