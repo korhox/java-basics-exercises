@@ -1,5 +1,4 @@
 import java.io.Console;
-import java.util.concurrent.TimeUnit;
 
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
