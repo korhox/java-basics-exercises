@@ -81,7 +81,7 @@ class Ex40_10 {
         System.out.println(RED_BOLD + "   ■                       ■" + RESET);
         System.out.println(RED_BOLD + "    ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■" + RESET);
         System.out.println();
-        System.out.println(GREEN_BOLD + "     Balance: " + BLUE_BOLD + balance + RESET);
+        System.out.println(GREEN_BOLD + "     Balance: " + BLUE_BOLD + balance + "  " + GREEN_BOLD + "Bet: " + BLUE_BOLD + 1 + RESET);
         System.out.println();
         System.out.println();
         System.out.println();
