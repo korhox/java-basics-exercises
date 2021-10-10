@@ -30,12 +30,14 @@ class Ex40_11 {
             } else if (playNewGame.matches("-?\\d+")) {
                 bet = Integer.parseInt(playNewGame);
             }
-        } while (playNewGame.equals("") || playNewGame.matches("-?\\d+"));
+        } while ((playNewGame.equals("") || playNewGame.matches("-?\\d+")) && balance > 0);
+        System.out.println();
+        System.out.println(RED_BOLD + "You lost the game :(");
     }
 
     public static void playGame() {
         clearScreen();
-        balance--;
+        balance = balance - bet;
         for (int i = 0; i < 10; i++) {
             resultTable[1][0] = resultTable[0][0];
             resultTable[1][1] = resultTable[0][1];
@@ -61,8 +63,10 @@ class Ex40_11 {
 
         if (resultTable[1][0] == resultTable[1][1] && resultTable[1][1] == resultTable[1][2]) {
             printUI();
+            int win = bet * 3;
             System.out.println(PURPLE_BOLD + "YOU WON THE GAME! 🎉🎉🎉");
-            balance += bet * 3;
+            System.out.println(PURPLE_BOLD + "You got " + YELLOW_BOLD + win + " more coins!");
+            balance += win;
 
             try {
                 Thread.sleep(5000);
@@ -85,9 +89,7 @@ class Ex40_11 {
         System.out.println(RED_BOLD + "   ■                       ■" + RESET);
         System.out.println(RED_BOLD + "    ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■" + RESET);
         System.out.println();
-        System.out.println(GREEN_BOLD + "     Balance: " + BLUE_BOLD + balance + "  " + GREEN_BOLD + "Bet: " + BLUE_BOLD + bet + RESET);
-        System.out.println();
-        System.out.println();
+        System.out.println(GREEN_BOLD + "     Balance: " + YELLOW_BOLD + balance + "c  " + GREEN_BOLD + "Bet: " + BLUE_BOLD + bet + RESET);
         System.out.println();
     }
 
