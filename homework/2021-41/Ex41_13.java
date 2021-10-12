@@ -1,10 +1,10 @@
 //
 // Juuso Korhonen <juuso.m.korhonen@tuni.fi>
-// This file has exercise 12
+// This file has exercise 13
 //
 import java.io.Console;
 
-public class Ex41_12 {
+public class Ex41_13 {
     public static int arenaSize = 0;
     public static int [] playerLocation = {0, 0};
     public static int score = 0;
@@ -18,7 +18,7 @@ public class Ex41_12 {
         playerLocation[0] = arenaSize / 2;
         playerLocation[1] = arenaSize / 2;
 
-        reGenerateApples(2);
+        reGenerateApples((int)(Math.random()*4+1));
 
         printPlayArea();
         printStats();
@@ -133,7 +133,7 @@ public class Ex41_12 {
     }
 
     public static void printStats() {
-        System.out.println(GREEN_BOLD + "■ " + GREEN_BOLD + score + RESET);
+        System.out.println(GREEN_BOLD + "■ " + GREEN_BOLD + score + GREEN + "/" + appleAmount + RESET);
     }
 
     public static Integer askInt(String message) {
