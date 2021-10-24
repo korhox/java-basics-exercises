@@ -25,7 +25,6 @@ public class Ex41_15 {
 
         reGenerateApples((int)(Math.random()*4+1));
         reGenerateEnemies(2);
-        reGenerateWayOut();
 
         printPlayArea();
         printStats();
@@ -34,8 +33,17 @@ public class Ex41_15 {
             printStats();
             status = movePlayer();
             if (status.equals("level_completed")) {
+                if (wayout[0] == 0 && wayout[1] == 0) {
+                    reGenerateWayOut();
+                }
+                status = "continue";
+            }
+            if (status.equals("exit_found")) {
                 reGenerateApples((int)(Math.random()*4+1));
                 reGenerateEnemies(2);
+                wayout[0] = 0;
+                wayout[1] = 0;
+                level++;
                 status = "continue";
             }
         } while (status.equals("continue"));
@@ -116,8 +124,8 @@ public class Ex41_15 {
                     }
                 }
 
-                Boolean boolWayout =  (w == wayout[0]) &&
-                                    (l == wayout[1]);
+                Boolean boolWayout =    (w == wayout[0] && l == wayout[1]) &&
+                                        (wayout[0] != 0 || wayout[1] != 0);
 
                 if (boolWayout) {
                     resultTable[l][w] = BLACK + "+ " + RESET;
@@ -143,9 +151,9 @@ public class Ex41_15 {
     public static void reGenerateWayOut() {
         if (getRand(1,2) == 1) {
             wayout[0] = 0;
-            wayout[1] = getRand(2, arenaSize-1);
+            wayout[1] = getRand(2, arenaSize-2);
         } else {
-            wayout[0] = getRand(2, arenaSize-1);
+            wayout[0] = getRand(2, arenaSize-2);
             wayout[1] = 0;
         }
     }
