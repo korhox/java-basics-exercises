@@ -47,9 +47,9 @@ class Ex40_11 {
             resultTable[2][1] = resultTable[1][1];
             resultTable[2][2] = resultTable[1][2];
     
-            resultTable[0][0] = randomNo(4);
-            resultTable[0][1] = randomNo(4);
-            resultTable[0][2] = randomNo(4);
+            resultTable[0][0] = randomNo(3);
+            resultTable[0][1] = randomNo(3);
+            resultTable[0][2] = randomNo(3);
 
             printUI();
             System.out.println(WHITE + "(you pulled the lever...)");
@@ -100,9 +100,9 @@ class Ex40_11 {
     public static String noToFruit(int index) {
         String [] fruits = new String[4];
         int fruitIndex = 0;
-        fruits[fruitIndex++] = "🍆";
+        fruits[fruitIndex++] = "🍍";
         fruits[fruitIndex++] = "🍉";
-        fruits[fruitIndex++] = "🍑";
+        fruits[fruitIndex++] = "🍎";
         fruits[fruitIndex++] = "🍌";
 
         return fruits[index];
