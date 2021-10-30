@@ -1,7 +1,7 @@
 /**
- * Robin exercise 13 from week 43
+ * Class Ex43_13 contains Robin exercise 13 from week 43
  * 
- * @author Juuso Korhonen <juuso.m.korhonen@tuni.fi>
+ * @author Juuso Korhonen {@literal <juuso.korhonen@bittivirta.fi>}
  */
 
 public class Ex43_13 {
