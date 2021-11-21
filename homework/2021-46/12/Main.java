@@ -6,13 +6,14 @@ class MyWindow extends JFrame {
 
     public void doIt() {
         System.out.println("hello");
+        setLocation((int) (Math.random() * (1920 + 2460 + 1920)), (int) (Math.random()*1000));
     }
     
     public void clicked(ActionEvent e) {
         System.out.println("clicked");
         click.setText("clicked");
 
-        Thread t = new Thread(() -> doIt());
+        Thread t = new Thread(this::doIt);
         t.start();
     }
 
@@ -20,7 +21,6 @@ class MyWindow extends JFrame {
         click = new JButton("click");
         add(click);
         click.addActionListener(this::clicked);
-
     }
 }
 
